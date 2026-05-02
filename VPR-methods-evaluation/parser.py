@@ -5,6 +5,14 @@ def parse_arguments():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
     parser.add_argument(
+    "--distance",
+    type=str,
+    default="l2",
+    choices=["l2", "dot"],
+    help="Distance metric used for kNN search: 'l2' or 'dot'.",
+    )
+
+    parser.add_argument(
         "--positive_dist_threshold",
         type=int,
         default=25,
